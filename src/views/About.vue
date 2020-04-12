@@ -1,5 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h3 class="ui center aligned header">Container</h3>
+    <div class="ui container">
+      <div class="ui segments">
+        <div class="ui segment">Content</div>
+        <div class="ui segment">Content</div>
+        <div class="ui segment">Content</div>
+        <div class="ui segment">Content</div>
+      </div>
+    </div>
   </div>
 </template>
