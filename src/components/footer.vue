@@ -26,6 +26,42 @@
 <script>
 export default {
   name: 'footer',
-  props: {}
+  props: {},
+  data:function(){
+      return {
+          footer: {
+        contact: [
+          {
+            name: 'Collaborate',
+            url: ''
+          },
+          {
+            name: 'Email',
+            url: ''
+          },
+          {
+            name: 'Skype',
+            url: ''
+          }
+        ],
+        more: [
+          {
+            name: 'Pipeline',
+            url:
+              ''
+          },
+          {
+            name: 'APIs',
+            url: '/api/'
+          }
+        ],
+        about: {
+          name: 'DEVOPS',
+          desc:
+            'This site is initialized and maintained by <a href="">Toby Qin</a>, welcome to contribute your thoughts and suggestions.'
+        }
+      }
+      }
+  }
 }
 </script>

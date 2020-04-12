@@ -7,15 +7,7 @@
       style="padding:4em;min-height:670px"
     >
       <div class="ui middle aligned stackable grid container">
-        <h3 class="ui center aligned header">Container</h3>
-        <div class="ui container">
-          <div class="ui segments">
-            <div class="ui segment">Content</div>
-            <div class="ui segment">Content</div>
-            <div class="ui segment">Content</div>
-            <div class="ui segment">Content</div>
-          </div>
-        </div>
+        <Steper />
       </div>
     </div>
 
@@ -26,12 +18,13 @@
 <script>
 import Nav from '@/components/navMenu.vue'
 import Footer from '@/components/footer.vue'
+import Steper from '@/components/steper.vue'
 export default {
   name: 'app',
   data: () => {
     return {}
   },
-  components: { Nav, Footer },
+  components: { Nav, Footer,Steper },
   computed: {
     routes: function() {
       var routes = []
