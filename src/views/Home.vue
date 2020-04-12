@@ -1,17 +1,21 @@
 <template>
   <div class="home">
-    <Step msg="Get started with Vue.js"/>
+    <Steper msg="Get started with Vue.js" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Step from '@/components/steper.vue'
+import Steper from '@/components/steper.vue'
 
 export default {
   name: 'Home',
+  data: () => {
+    return {
+    }
+  },
   components: {
-    Step
+    Steper
   }
 }
 </script>

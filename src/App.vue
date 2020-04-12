@@ -17,8 +17,14 @@
             <router-link class="item" to="/">
               <img id="logo-img" alt="Awesome UI" src="./assets/default.png" />
             </router-link>
-            <router-link class="item text" to="/">Home</router-link>
-            <router-link class="item text" to="/about">About</router-link>
+            <router-link
+              :to="route.path"
+              v-for="route in routes"
+              :key="route.key"
+              class="item text"
+            >
+              {{ route.name }}
+            </router-link>
           </div>
         </div>
       </div>
@@ -32,33 +38,36 @@
         </div>
       </div>
 
-      <div class="ui inverted vertical footer segment" id="main-footer">
-        <div class="ui container">
-          <div
-            class="ui stackable inverted divided equal height stackable grid"
-          >
-            <div class="three wide column">
-              <h4 class="ui inverted header">Contact us</h4>
-              <div class="ui inverted link list">
-                <a href="" class="item">test</a>
-              </div>
-            </div>
-            <div class="three wide column">
-              <h4 class="ui inverted header">More about</h4>
-              <div class="ui inverted link list">
-                <a href="" class="item">test</a>
-              </div>
-            </div>
-            <div class="seven wide column">
-              <h4 class="ui inverted header">name</h4>
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   </div>
 </template>
+
+<script>
+import Footer from '@/components/footer.vue'
+export default {
+  name: 'app',
+  data: () => {
+    return {
+    }
+  },
+  components: {
+    Footer
+  },
+  computed: {
+    routes: function() {
+      var routes = []
+      for (var i in this.$router.options.routes) {
+        var route = this.$router.options.routes[i]
+        if(route.kind=='main'){
+          routes.push(route)
+        }
+      }
+      return routes
+    }
+  }
+}
+</script>
 
 <style>
 .hidden.menu {
@@ -157,7 +166,7 @@
   display: none;
 }
 
-.ui.secondary.pointing.menu .item.text.router-link-exact-active{
+.ui.secondary.pointing.menu .item.text.router-link-exact-active {
   color: #fff !important;
   font-weight: 700 !important;
   border-bottom-color: #fff;
