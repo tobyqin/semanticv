@@ -1,4 +1,6 @@
-# smanticvue
+# semanticv
+
+A demo to use semantic UI on vue.js.
 
 ## Project setup
 ```
