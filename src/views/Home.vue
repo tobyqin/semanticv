@@ -4,30 +4,10 @@
       class="ui inverted vertical masthead center aligned segment"
       id="main-menu"
     >
-      <div class="ui container">
-        <div class="ui large secondary inverted pointing menu" style="border:0">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <router-link class="item" to="/">
-            <img id="logo-img" alt="Awesome UI" src="../assets/default.png" />
-          </router-link>
-          <router-link
-            :to="route.path"
-            v-for="route in routes"
-            :key="route.key"
-            class="item text"
-          >
-            {{ route.name }}
-          </router-link>
-        </div>
-      </div>
+      <pure-nav />
 
       <div class="ui container">
-        <img
-          class="page-logo"
-          src="../assets/dogops.png"
-        />
+        <img class="page-logo" src="../assets/dogops.png" />
         <!-- <h1 class="ui inverted header">{{name}} </h1>-->
         <h2>{{ subtitle }}</h2>
         <span v-for="i in entries" :key="i.key">
@@ -36,11 +16,15 @@
       </div>
     </div>
 
-    <div class="ui vertical stripe segment" id="main-body">
+    <div class="ui vertical stripe segment">
       <div class="ui middle aligned stackable grid container">
         <div class="row">
           <div class="eight wide column">
-            <div v-for="i in introductions" style="margin-top:30px" :key="i.key">
+            <div
+              v-for="i in introductions"
+              style="margin-top:30px"
+              :key="i.key"
+            >
               <h3 class="ui header">{{ i.name }}</h3>
               <p>{{ i.desc }}</p>
             </div>
@@ -62,7 +46,7 @@
       </div>
     </div>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -70,15 +54,16 @@
 // @ is an alias to /src
 
 import Footer from '@/components/footer.vue'
+import PureNav from '@/components/pureNav.vue'
 
 export default {
   name: 'Home',
-  components: { Footer },
+  components: { Footer, PureNav },
   data: () => {
     return {
       subtitle:
         'Move fast and don\'t break things, win the "Time to Market" battle.',
-      
+
       introductions: [
         {
           name: 'Continuous Delivery',
@@ -95,7 +80,6 @@ export default {
         name: 'Learn More',
         url: ''
       }
-      
     }
   },
   computed: {

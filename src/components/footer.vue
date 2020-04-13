@@ -5,18 +5,32 @@
         <div class="three wide column">
           <h4 class="ui inverted header">Contact us</h4>
           <div class="ui inverted link list">
-            <a href="" class="item">test</a>
+            <a
+              v-for="item in footer.contact"
+              :href="item.url"
+              class="item"
+              :key="item.id"
+            >
+              {{ item.name }}
+            </a>
           </div>
         </div>
         <div class="three wide column">
           <h4 class="ui inverted header">More about</h4>
           <div class="ui inverted link list">
-            <a href="" class="item">test</a>
+            <a
+              v-for="item in footer.more"
+              :href="item.url"
+              class="item"
+              :key="item.id"
+            >
+              {{ item.name }}
+            </a>
           </div>
         </div>
         <div class="seven wide column">
-          <h4 class="ui inverted header">name</h4>
-          <p>test</p>
+          <h4 class="ui inverted header">{{ footer.about.name }}</h4>
+          <p v-html="footer.about.desc"></p>
         </div>
       </div>
     </div>
@@ -27,28 +41,23 @@
 export default {
   name: 'footer',
   props: {},
-  data:function(){
-      return {
-          footer: {
+  data: function() {
+    return {
+      footer: {
         contact: [
           {
-            name: 'Collaborate',
-            url: ''
-          },
-          {
             name: 'Email',
-            url: ''
+            url: 'mailto:toby.qin@me.com'
           },
           {
             name: 'Skype',
-            url: ''
+            url: 'sip:toby.qin@me.com'
           }
         ],
         more: [
           {
             name: 'Pipeline',
-            url:
-              ''
+            url: ''
           },
           {
             name: 'APIs',
@@ -58,10 +67,19 @@ export default {
         about: {
           name: 'DEVOPS',
           desc:
-            'This site is initialized and maintained by <a href="">Toby Qin</a>, welcome to contribute your thoughts and suggestions.'
+            'This site is initialized and maintained by <a href="https://github.com/tobyqin">Toby Qin</a>, welcome to contribute your thoughts and suggestions.'
         }
       }
-      }
+    }
   }
 }
 </script>
+
+<style>
+body{
+
+}
+#main-footer {
+
+}
+</style>
