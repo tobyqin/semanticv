@@ -46,19 +46,19 @@
       </div>
     </div>
 
-    <Footer />
+    <foot />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Footer from '@/components/footer.vue'
+import Foot from '@/components/footer.vue'
 import PureNav from '@/components/pureNav.vue'
 
 export default {
   name: 'Home',
-  components: { Footer, PureNav },
+  components: { Foot, PureNav },
   data: () => {
     return {
       subtitle:
@@ -82,17 +82,6 @@ export default {
       }
     }
   },
-  computed: {
-    routes: function() {
-      var routes = []
-      for (var i in this.$router.options.routes) {
-        var route = this.$router.options.routes[i]
-        if (route.kind == 'main') {
-          routes.push(route)
-        }
-      }
-      return routes
-    }
-  }
+  computed: {}
 }
 </script>

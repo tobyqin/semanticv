@@ -9,6 +9,14 @@
   display: none;
 }
 
+html,
+body {
+  height: 100%;
+}
+.main-body {
+  min-height: 78vh;
+}
+
 #main-menu {
   background: #056dae;
   background-image: url(/static/images/bg.jpg);

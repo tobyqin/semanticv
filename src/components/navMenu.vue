@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div
-      class="ui inverted vertical masthead center aligned segment"
-      style="background:#056DAE;min-height:30px"
-      id="main-menu"
-    >
-      <pure-nav />
-    </div>
+  <div
+    class="ui inverted vertical masthead center aligned segment"
+    style="background:#056DAE;min-height:30px"
+    id="main-menu"
+  >
+    <pure-nav />
   </div>
 </template>
 

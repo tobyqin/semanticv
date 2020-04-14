@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'footer',
+  name: 'pageFooter',
   props: {},
   data: function() {
     return {
@@ -76,10 +76,7 @@ export default {
 </script>
 
 <style>
-body{
-
-}
 #main-footer {
-
+min-height: 200px;
 }
 </style>
