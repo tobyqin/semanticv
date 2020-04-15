@@ -3,6 +3,17 @@
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  updated: function() {
+    this.$nextTick(() => {
+      // if (window.jQuery('#main-footer')) {
+      //   window.jQuery('.main-body').css('min-height', window.innerHeight - 240)
+      // }
+    })
+  }
+}
+</script>
 
 <style>
 .hidden.menu {
@@ -13,8 +24,9 @@ html,
 body {
   height: 100%;
 }
+
 .main-body {
-  min-height: 78vh;
+  min-height: 80vh;
 }
 
 #main-menu {
@@ -121,34 +133,5 @@ body {
   color: #444;
   font-weight: 300;
   line-height: 1.45;
-}
-
-@media only screen and (max-width: 700px) {
-  .ui.fixed.menu {
-    display: none !important;
-  }
-
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: none;
-  }
-
-  .secondary.pointing.menu .toc.item {
-    display: block;
-  }
-
-  .masthead.segment {
-    min-height: 350px;
-  }
-
-  .masthead h1.ui.header {
-    font-size: 2em;
-    margin-top: 1.5em;
-  }
-
-  .masthead h2 {
-    margin-top: 0.5em;
-    font-size: 1.5em;
-  }
 }
 </style>
