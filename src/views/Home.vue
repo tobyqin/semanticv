@@ -11,9 +11,9 @@
         <!-- <h1 class="ui inverted header">{{name}} </h1>-->
         <h2>{{ subtitle }}</h2>
         <span v-for="i in entries" :key="i.key">
-          <a :class="i.class" :href="i.url">
-            <i :class="i.icon"></i> <span v-html="i.name"></span
-          ></a>
+          <a :class="i.class" :href="i.url" style="margin-right:1em">
+            {{i.name}}<i :class="i.icon" style="margin-left:0.5em"></i>
+          </a>
         </span>
       </div>
     </div>
@@ -67,16 +67,16 @@ export default {
         'Move fast and don\'t break things, win the "Time to Market" battle.',
       entries: [
         {
-          name: 'Get Started ',
-          url: '/',
-          class: 'ui huge red button',
-          icon: 'globe icon'
-        },
-        {
           name: 'Document',
           url: '/',
+          class: 'ui huge red button',
+          icon: 'book icon'
+        },
+        {
+          name: 'Getting Started',
+          url: '/',
           class: 'ui huge primary button',
-          icon: 'right arrow circle icon'
+          icon: 'right arrow icon'
         }
       ],
       introductions: [
