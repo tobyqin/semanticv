@@ -4,8 +4,9 @@
 
     <div class="ui vertical stripe segment main-body">
       <div class="ui middle aligned stackable grid container">
-        <heatmap :commits="commits" :user='user' />
-        <heatmap :commits="commits" :user='user' />
+        <heatmap :commits="commits" :user="user" />
+        <heatmap :commits="commits" :user="user" />
+        {{ commitData }}
       </div>
     </div>
 
@@ -17,11 +18,21 @@
 import NavMenu from '@/components/navMenu.vue'
 import Foot from '@/components/footer.vue'
 import Heatmap from '@/components/heatmap.vue'
+import axios from 'axios'
 export default {
   name: 'app',
   data: () => {
     return {
-      'user':'Toby Qin'
+      user: 'Toby Qin',
+      dataUrl: 'http://127.0.0.1:5500/github-commit.json',
+      commitData:null
+    }
+  },
+  methods:{
+    getData(){
+      axios.get(this.dataUrl).then((res)=>{
+        this.commitData=res
+      })
     }
   },
   components: { NavMenu, Foot, Heatmap },
@@ -39,6 +50,13 @@ export default {
       }
       return result
     }
+  },
+  created(){
+    var dataUrl='http://127.0.0.1:5500/github-commit.json'
+    axios.get(dataUrl).then((res)=>{
+        this.commitData=res['data']
+        this.commitData['count']=this.commitData['commits']
+      })
   }
 }
 </script>

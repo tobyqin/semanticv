@@ -33,7 +33,6 @@ export default {
       var total = 0
       var len = this.commits.length
       var counter = 0
-      console.log(len)
       for (var day of this.commits) {
         if (counter == 0) {
           this.start = day.date
