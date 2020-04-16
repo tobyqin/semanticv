@@ -17,6 +17,12 @@ const routes = [{
     component: () => import('../views/Start.vue')
   },
   {
+    path: '/commits',
+    name: 'Commits',
+    kind: 'main',
+    component: () => import('../views/Commits.vue')
+  },
+  {
     path: '/about',
     kind: 'main',
     name: 'About',
