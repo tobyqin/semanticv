@@ -31,17 +31,21 @@ export default {
     },
     totalCommits() {
       var total = 0
-      var len = this.commits.length
-      var counter = 0
+
+      var s = '9999-01-01'
+      var e = '0000-00-00'
       for (var day of this.commits) {
-        if (counter == 0) {
-          this.start = day.date
-        } else if (counter == len - 1) {
-          this.end = day.date
+        var currentDate = moment(String(day.date)).format('YYYY-MM-DD')
+        if (currentDate > e) {
+          e = currentDate
+        }
+        if (currentDate < s) {
+          s = currentDate
         }
         total += day.count
-        counter += 1
       }
+      this.start = s
+      this.end = e
       return total
     }
   },

@@ -4,9 +4,15 @@
 
     <div class="ui vertical stripe segment main-body">
       <div class="ui middle aligned stackable grid container">
-        <heatmap :commits="commits" :user="user" />
-        <heatmap :commits="commitData" :user="user" />
-        {{ commitData }}
+        <heatmap v-if="false" :commits="commits" :user="user" />
+        <div v-if="commitData" style="width:100%">
+          <heatmap
+            v-for="c in commitData"
+            :commits="c.contribution"
+            :user="c.user"
+            :key="c.key"
+          />
+        </div>
       </div>
     </div>
 
@@ -24,14 +30,14 @@ export default {
   data: () => {
     return {
       user: 'Toby Qin',
-      dataUrl: 'http://127.0.0.1:5500/github-commit.json',
-      commitData:null
+      dataUrl: 'http://127.0.0.1:5500/git-commits.json',
+      commitData: null
     }
   },
-  methods:{
-    getData(){
-      axios.get(this.dataUrl).then((res)=>{
-        this.commitData=res
+  methods: {
+    getData() {
+      axios.get(this.dataUrl).then(res => {
+        this.commitData = res
       })
     }
   },
@@ -51,17 +57,15 @@ export default {
       return result
     }
   },
-  created(){
-    var dataUrl='http://127.0.0.1:5500/github-commit.json'
-    this.commitData =[]
-    axios.get(dataUrl).then((res)=>{
-        var data=res['data']
-        for(var c of data){
-          c['count']=c['commits']
-          this.commitData.push(c)
-        }
-        
-      })
+  created() {
+    this.commitData = []
+    axios.get(this.dataUrl).then(res => {
+      var data = res['data']
+      for (var c of data) {
+        c['count'] = c['commits']
+        this.commitData.push(c)
+      }
+    })
   }
 }
 </script>
