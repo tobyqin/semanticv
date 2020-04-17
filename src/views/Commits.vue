@@ -5,7 +5,7 @@
     <div class="ui vertical stripe segment main-body">
       <div class="ui middle aligned stackable grid container">
         <heatmap :commits="commits" :user="user" />
-        <heatmap :commits="commits" :user="user" />
+        <heatmap :commits="commitData" :user="user" />
         {{ commitData }}
       </div>
     </div>
@@ -53,9 +53,14 @@ export default {
   },
   created(){
     var dataUrl='http://127.0.0.1:5500/github-commit.json'
+    this.commitData =[]
     axios.get(dataUrl).then((res)=>{
-        this.commitData=res['data']
-        this.commitData['count']=this.commitData['commits']
+        var data=res['data']
+        for(var c of data){
+          c['count']=c['commits']
+          this.commitData.push(c)
+        }
+        
       })
   }
 }
