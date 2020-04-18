@@ -1,31 +1,37 @@
 <template>
-  <div>
-    <nav-menu />
-
-    <div class="ui vertical stripe segment main-body">
-      <div class="ui middle aligned stackable grid container">
-        <Steper />
-      </div>
-    </div>
-
-    <foot />
-  </div>
+  <a-layout id="components-layout-demo-fixed">
+    <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <div class="logo" />
+      <a-menu
+        theme="dark"
+        mode="horizontal"
+        :defaultSelectedKeys="['2']"
+        :style="{ lineHeight: '64px' }"
+      >
+        <a-menu-item key="1">nav 1</a-menu-item>
+        <a-menu-item key="2">nav 2</a-menu-item>
+        <a-menu-item key="3">nav 3</a-menu-item>
+      </a-menu>
+    </a-layout-header>
+    <a-layout-content :style="{ padding:'0 50px', marginTop:'64px', minHeight:'calc(90vh - 50px)'}">
+      <a-breadcrumb :style="{ margin: '16px 0' }">
+        <a-breadcrumb-item>Home</a-breadcrumb-item>
+        <a-breadcrumb-item>List</a-breadcrumb-item>
+        <a-breadcrumb-item>App</a-breadcrumb-item>
+      </a-breadcrumb>
+      <div :style="{ background: '#fff', padding: '24px', minHeight: '380px' }">Content</div>
+    </a-layout-content>
+    <a-layout-footer :style="{ textAlign: 'center' }">
+      Design @2020 Created by Toby Qin
+    </a-layout-footer>
+  </a-layout>
 </template>
-
-<script>
-import NavMenu from '@/components/navMenu.vue'
-import Foot from '@/components/footer.vue'
-import Steper from '@/components/steper.vue'
-export default {
-  name: 'app',
-  data: () => {
-    return {}
-  },
-  components: { NavMenu, Foot, Steper },
-  computed: {}
-}
-</script>
-
 <style>
-
+  #components-layout-demo-fixed .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
 </style>
