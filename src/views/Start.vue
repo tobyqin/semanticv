@@ -5,6 +5,7 @@
     <div class="ui vertical stripe segment main-body">
       <div class="ui middle aligned stackable grid container">
         <Steper />
+        <el-button>Hello</el-button>
       </div>
     </div>
 
