@@ -26,11 +26,11 @@
 import NavMenu from '@/components/navMenu.vue'
 import Foot from '@/components/footer.vue'
 export default {
-  name: 'app',
+  name: 'App',
+  components: { NavMenu, Foot },
   data: () => {
     return {}
   },
-  components: { NavMenu, Foot },
   computed: {}
 }
 </script>

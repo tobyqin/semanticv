@@ -2,16 +2,13 @@
   <div style="width:100%; margin-bottom:2em">
     <h1>{{ user }}</h1>
     <calendar-heatmap :end-date="end" :values="commits" :max="max" />
-    <p>
-      {{ totalCommits() }} Commits ({{ format_date(start) }} -
-      {{ format_date(end) }})
-    </p>
+    <p>{{ totalCommits() }} Commits ({{ format_date(start) }} - {{ format_date(end) }})</p>
   </div>
 </template>
 
 <script>
-import 'vue-calendar-heatmap/dist/vue-calendar-heatmap.css'
-import { CalendarHeatmap } from 'vue-calendar-heatmap'
+import '@/libs/vue-calendar-heatmap.css'
+import { CalendarHeatmap } from '@/libs/vue-calendar-heatmap.common'
 import moment from 'moment'
 export default {
   name: 'Heatmap',

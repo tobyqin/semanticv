@@ -4,7 +4,8 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+  {
     path: '/',
     name: 'Home',
     kind: 'main',
@@ -29,7 +30,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/news',
@@ -37,16 +38,16 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/News.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/News.vue')
   }
 ]
 
 const router = new VueRouter({
-  //mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
-  routes,
-  //linkActiveClass: "active",
-  //linkExactActiveClass: "active"
+  routes
+  // linkActiveClass: "active",
+  // linkExactActiveClass: "active"
 })
 
 export default router

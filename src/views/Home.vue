@@ -1,18 +1,18 @@
 <template>
   <div class="pusher">
     <div
-      class="ui inverted vertical masthead center aligned segment"
       id="main-menu"
+      class="ui inverted vertical masthead center aligned segment"
     >
       <pure-nav />
 
       <div class="ui container">
-        <img class="page-logo" src="../assets/dogops.png" />
+        <img class="page-logo" src="../assets/dogops.png">
         <!-- <h1 class="ui inverted header">{{name}} </h1>-->
         <h2>{{ subtitle }}</h2>
         <span v-for="i in entries" :key="i.key">
           <a :class="i.class" :href="i.url" style="margin-right:1em">
-            {{i.name}}<i :class="i.icon" style="margin-left:0.5em"></i>
+            {{ i.name }}<i :class="i.icon" style="margin-left:0.5em" />
           </a>
         </span>
       </div>
@@ -24,8 +24,8 @@
           <div class="eight wide column">
             <div
               v-for="i in introductions"
-              style="margin-top:30px"
               :key="i.key"
+              style="margin-top:30px"
             >
               <h3 class="ui header">{{ i.name }}</h3>
               <p>{{ i.desc }}</p>
@@ -35,7 +35,7 @@
             <img
               src="../assets/dogops.png"
               class="ui large bordered rounded image"
-            />
+            >
           </div>
         </div>
         <div class="row">

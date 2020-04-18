@@ -18,15 +18,13 @@ import NavMenu from '@/components/navMenu.vue'
 import Foot from '@/components/footer.vue'
 import Steper from '@/components/steper.vue'
 export default {
-  name: 'app',
+  name: 'App',
+  components: { NavMenu, Foot, Steper },
   data: () => {
     return {}
   },
-  components: { NavMenu, Foot, Steper },
   computed: {}
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3 class="ui center aligned header">{{msg}}</h3>
+    <h3 class="ui center aligned header">{{ msg }}</h3>
     <br>
     <div class="ui last container">
       <div class="ui three steps">
@@ -31,12 +31,11 @@
 export default {
   name: 'Steper',
   props: {
-    msg: String
+    msg: { type: String, default: 'hello' }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

@@ -1,16 +1,11 @@
 <template>
-  <div class="ui inverted vertical footer segment" id="main-footer">
+  <div id="main-footer" class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
         <div class="three wide column">
           <h4 class="ui inverted header">Contact us</h4>
           <div class="ui inverted link list">
-            <a
-              v-for="item in footer.contact"
-              :href="item.url"
-              class="item"
-              :key="item.id"
-            >
+            <a v-for="item in footer.contact" :key="item.id" :href="item.url" class="item">
               {{ item.name }}
             </a>
           </div>
@@ -18,19 +13,14 @@
         <div class="three wide column">
           <h4 class="ui inverted header">More about</h4>
           <div class="ui inverted link list">
-            <a
-              v-for="item in footer.more"
-              :href="item.url"
-              class="item"
-              :key="item.id"
-            >
+            <a v-for="item in footer.more" :key="item.id" :href="item.url" class="item">
               {{ item.name }}
             </a>
           </div>
         </div>
         <div class="seven wide column">
           <h4 class="ui inverted header">{{ footer.about.name }}</h4>
-          <p v-html="footer.about.desc"></p>
+          <p v-html="footer.about.desc" />
         </div>
       </div>
     </div>
@@ -39,7 +29,7 @@
 
 <script>
 export default {
-  name: 'pageFooter',
+  name: 'PageFooter',
   props: {},
   data: function() {
     return {
@@ -77,6 +67,6 @@ export default {
 
 <style>
 #main-footer {
-min-height: 200px;
+  min-height: 200px;
 }
 </style>
