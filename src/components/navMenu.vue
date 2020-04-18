@@ -1,8 +1,8 @@
 <template>
   <div
+    id="main-menu"
     class="ui inverted vertical masthead center aligned segment"
     style="background:#056DAE;min-height:30px"
-    id="main-menu"
   >
     <pure-nav />
   </div>
@@ -14,7 +14,7 @@ export default {
   name: 'Nav',
   components: { pureNav },
   props: {
-    routes: Object
+    routes: { type: Object, default: null }
   }
 }
 </script>

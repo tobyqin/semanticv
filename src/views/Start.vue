@@ -1,6 +1,7 @@
 <template>
   <div>
     <nav-menu />
+    <br />
 
     <div class="ui vertical stripe segment main-body">
       <div class="ui middle aligned stackable grid container">
