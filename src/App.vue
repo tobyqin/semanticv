@@ -3,17 +3,6 @@
     <router-view />
   </div>
 </template>
-<script>
-export default {
-  updated: function() {
-    this.$nextTick(() => {
-      // if (window.jQuery('#main-footer')) {
-      //   window.jQuery('.main-body').css('min-height', window.innerHeight - 240)
-      // }
-    })
-  }
-}
-</script>
 
 <style>
 .hidden.menu {

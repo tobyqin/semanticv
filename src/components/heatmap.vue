@@ -27,6 +27,13 @@ export default {
       default: 5
     }
   },
+  data: () => {
+    return {
+      start: '',
+      end: ''
+    }
+  },
+  computed: {},
   methods: {
     format_date(value) {
       if (value) {
@@ -52,13 +59,6 @@ export default {
       this.end = e
       return total
     }
-  },
-  data: () => {
-    return {
-      start: '',
-      end: ''
-    }
-  },
-  computed: {}
+  }
 }
 </script>
