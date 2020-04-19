@@ -14,10 +14,17 @@ export default {
   name: 'Heatmap',
   components: { CalendarHeatmap },
   props: {
-    commits: Array,
+    commits: {
+      type: Array,
+      default: null
+    },
     user: {
       type: String,
       default: 'Toby Qin'
+    },
+    max: {
+      type: Number,
+      default: 5
     }
   },
   methods: {
@@ -49,8 +56,7 @@ export default {
   data: () => {
     return {
       start: '',
-      end: '',
-      max: 6
+      end: ''
     }
   },
   computed: {}

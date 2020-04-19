@@ -19,9 +19,21 @@ const routes = [
   },
   {
     path: '/commits',
-    name: 'Commits',
+    name: 'Calendar',
     kind: 'main',
-    component: () => import('../views/Commits.vue')
+    component: () => import('../views/CommitCalendar.vue')
+  },
+  {
+    path: '/member-commits',
+    name: 'Members',
+    kind: 'main',
+    component: () => import('../views/CommitMembers.vue')
+  },
+  {
+    path: '/team-commits',
+    name: 'Teams',
+    kind: 'main',
+    component: () => import('../views/CommitTeam.vue')
   },
   {
     path: '/about',
